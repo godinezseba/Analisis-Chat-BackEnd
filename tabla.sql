@@ -1,7 +1,6 @@
-create database chat;
+create database chat; -- ejecutar solo
 
-connect chat;
-
+-- dentro de la BD chat ejecutar las tablas
 create table public.mensaje(
     id_mensaje serial not null,
     mensaje text,
