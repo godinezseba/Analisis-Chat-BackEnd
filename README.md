@@ -1,4 +1,4 @@
-# Hola
+# Te dije que no lo hicieras >:c
 
 ## Uso:
 En este proyecto se definen 2 verbos:
@@ -41,10 +41,13 @@ Donde _user_ representa el usuario al que se le quiere extraer mensajes y _id_ r
 - Ejecutar: `mvn spring-boot:run`
 
 ## Consideraciones:
-- Se esta ejecutando en el puerto `8000`
+- Se esta ejecutando en el puerto `8000`.
 
 ## Requisitos Previos:
-- Crear la Base de Datos con sus respectivas tablas, para el caso de esta Demo las tablas estan en el archivo `tablas.sql`.
+- Esta hecho para conectarce a MySQL.
+- Crear la Base de Datos "chat".
+- Las tablas se hacen de forma automatica.
+- **OJO CON EL USUARIO Y LA PASSWORD** para modificarlo ir al archivo [application.properties]().
 
 ## Contacto:
 Por favor cualquier cosa que no se entienda o cualquier **falta de ortografía** haganmelo saber por correo.
