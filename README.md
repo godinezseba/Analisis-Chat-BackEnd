@@ -47,7 +47,7 @@ Donde _user_ representa el usuario al que se le quiere extraer mensajes y _id_ r
 - Esta hecho para conectarce a MySQL.
 - Crear la Base de Datos "chat".
 - Las tablas se hacen de forma automatica.
-- **OJO CON EL USUARIO Y LA PASSWORD** para modificarlo ir al archivo [application.properties]().
+- **OJO CON EL USUARIO Y LA PASSWORD** para modificarlo ir al archivo [application.properties](https://github.com/godinezseba/Analisis-Chat-BackEnd/blob/no-me-abras/src/main/resources/application.properties).
 
 ## Contacto:
 Por favor cualquier cosa que no se entienda o cualquier **falta de ortografía** haganmelo saber por correo.
