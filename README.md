@@ -8,7 +8,7 @@ En este proyecto se definen 2 verbos:
 ```JSON
 {
     "mensaje":"hola mundo",
-    "user": 123
+    "user": "chalito"
 }
 ```
 - **Respuesta:** booleano
@@ -21,17 +21,17 @@ Donde _user_ representa el usuario al que se le quiere extraer mensajes y _id_ r
     {
         "id": 1,
         "mensaje": "hola mundo",
-        "user": 123
+        "user": "chalito"
     },
     {
         "id": 4,
         "mensaje": "report",
-        "user": 123
+        "user": "chalito"
     },
     {
         "id": 5,
         "mensaje": ">:c",
-        "user": 123
+        "user": "chalito"
     }
 ]
 ```

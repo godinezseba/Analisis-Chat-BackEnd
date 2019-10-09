@@ -24,13 +24,13 @@ public class Mensaje{
     private String mensaje;
 
     @Column(name="user_send")
-    private long user;
+    private String user;
 
     public Mensaje(){
 
     }
 
-    public Mensaje(long id, String mensaje, long user) {
+    public Mensaje(long id, String mensaje, String user) {
         this.id = id;
         this.mensaje = mensaje;
         this.user = user;
@@ -52,11 +52,11 @@ public class Mensaje{
         this.mensaje = mensaje;
     }
 
-    public long getUser() {
+    public String getUser() {
         return this.user;
     }
 
-    public void setUser(long user) {
+    public void setUser(String user) {
         this.user = user;
     }
 
