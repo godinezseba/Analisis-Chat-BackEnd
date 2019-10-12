@@ -43,7 +43,7 @@ public class MensajeService{
         }
     }
 
-    public List<Mensaje> obtenerMayorId(long id, String user){
-        return repositorio.findByIdGreaterThanAndUser(id, user);
+    public List<Mensaje> obtenerMayorId(long id){
+        return repositorio.findByIdGreaterThan(id);
     }
 }
