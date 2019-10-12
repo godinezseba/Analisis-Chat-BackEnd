@@ -25,8 +25,8 @@ public class MensajeController{
     MensajeService servicio;
 
     @GetMapping("/{id}")
-    public List<Mensaje> obtenerMayorId(@PathVariable("id") long id, @RequestParam(name="user", required = true) String user){
-        return servicio.obtenerMayorId(id, user);
+    public List<Mensaje> obtenerMayorId(@PathVariable("id") long id){
+        return servicio.obtenerMayorId(id);
     }
 
     @PostMapping("/mensaje")

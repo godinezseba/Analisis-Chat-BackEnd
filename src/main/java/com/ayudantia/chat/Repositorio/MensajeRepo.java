@@ -13,6 +13,6 @@ public interface  MensajeRepo extends JpaRepository<Mensaje, Serializable>{
 
     public abstract Mensaje findById(long id);
 
-    public abstract List<Mensaje> findByIdGreaterThanAndUser(long id, String user);
+    public abstract List<Mensaje> findByIdGreaterThan(long id);
 
 }

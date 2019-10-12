@@ -13,8 +13,8 @@ En este proyecto se definen 2 verbos:
 ```
 - **Respuesta:** booleano
 ### 2. Listar mensajes:
-- **Definición:** `GET /v1/mensaje/{id}?user=<number>`\
-Donde _user_ representa el usuario al que se le quiere extraer mensajes y _id_ representa el id del último mensaje leido.
+- **Definición:** `GET /v1/mensaje/{id}`\
+Donde _id_ representa el id del último mensaje leido.
 - **Respuesta:**
 ```JSON
 [
@@ -22,6 +22,16 @@ Donde _user_ representa el usuario al que se le quiere extraer mensajes y _id_ r
         "id": 1,
         "mensaje": "hola mundo",
         "user": "chalito"
+    },
+    {
+        "id": 2,
+        "mensaje": "nose que poner",
+        "user": "seba"
+    },
+    {
+        "id": 3,
+        "mensaje": "uwu",
+        "user": "seba"
     },
     {
         "id": 4,
