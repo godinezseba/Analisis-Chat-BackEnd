@@ -8,7 +8,8 @@ En este proyecto se definen 2 verbos:
 ```JSON
 {
     "mensaje":"hola mundo",
-    "user": "chalito"
+    "to_user": "chalito",
+    "consulta": 1
 }
 ```
 - **Respuesta:** booleano

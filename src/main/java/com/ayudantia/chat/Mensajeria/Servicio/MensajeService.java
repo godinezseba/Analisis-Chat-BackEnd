@@ -1,9 +1,9 @@
-package com.ayudantia.chat.Servicio;
+package com.ayudantia.chat.Mensajeria.Servicio;
 
 import java.util.List;
 
-import com.ayudantia.chat.Entidades.Mensaje;
-import com.ayudantia.chat.Repositorio.MensajeRepo;
+import com.ayudantia.chat.Mensajeria.Modelos.Mensaje;
+import com.ayudantia.chat.Mensajeria.Repositorio.MensajeRepo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -43,7 +43,7 @@ public class MensajeService{
         }
     }
 
-    public List<Mensaje> obtenerMayorId(long id){
-        return repositorio.findByIdGreaterThan(id);
+    public List<Mensaje> obtenerMayorId(long id, long consulta){
+        return repositorio.findByIdGreaterThanAndConsulta(id, consulta);
     }
 }

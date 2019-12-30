@@ -1,4 +1,4 @@
-package com.ayudantia.chat.Entidades;
+package com.ayudantia.chat.Mensajeria.Modelos;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,17 +23,21 @@ public class Mensaje{
     @Type(type="text")
     private String mensaje;
 
-    @Column(name="user_send")
-    private String user;
+    @Column(name="id_consulta")
+    private long consulta;
+
+    @Column(name="id_emisor")
+    private long emisor;
 
     public Mensaje(){
 
     }
 
-    public Mensaje(long id, String mensaje, String user) {
+    public Mensaje(long id, String mensaje, long consulta, long emisor) {
         this.id = id;
         this.mensaje = mensaje;
-        this.user = user;
+        this.consulta = consulta;
+        this.emisor = emisor;
     }
 
     public long getId() {
@@ -52,12 +56,20 @@ public class Mensaje{
         this.mensaje = mensaje;
     }
 
-    public String getUser() {
-        return this.user;
+    public long getConsulta() {
+        return this.consulta;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setConsulta(long consulta) {
+        this.consulta = consulta;
+    }
+
+    public long getEmisor() {
+        return this.emisor;
+    }
+
+    public void setEmisor(long emisor) {
+        this.emisor = emisor;
     }
 
 }
