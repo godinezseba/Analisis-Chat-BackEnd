@@ -1,52 +1,78 @@
 # Hola
 
 ## Uso:
-En este proyecto se definen 2 verbos:
-### 1. Añadir mensaje:
-- **Definición:** `POST /v1/mensaje/mensaje`
+### Autentificacion:
+#### 1. Recibir token:
+- **Definición:** `POST /autentificar`
 - **Cuerpo:**
 ```JSON
 {
+	"username": "seba",
+	"password": "holamundo"
+}
+```
+- **Respuesta:** 
+```JSON
+{
+    "jwt": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzZWJhIiwiZXhwIjoxNTc2NzY4MzIwLCJpYXQiOjE1NzY3MzIzMjB9.amR-byoeVUv65J7J6rsRQl9VH9aGVCRvQMdBbzzZhKQ"
+}
+```
+### Mensajes
+### 1. Añadir mensaje:
+- **Definición:** `POST /v1/mensaje/mensaje`
+- **Header:**
+```
+Authorization: Bearer <jwt>
+```
+- **Cuerpo:**
+```JSON
+{
+    "consulta": 1,
     "mensaje":"hola mundo",
-    "to_user": "chalito",
-    "consulta": 1
 }
 ```
 - **Respuesta:** booleano
 ### 2. Listar mensajes:
-- **Definición:** `GET /v1/mensaje/{id}`\
-Donde _id_ representa el id del último mensaje leido.
+- **Definición:** `GET /v1/mensaje/{consulta}/{id}`\
+Donde _id_ representa el id del último mensaje leido en la _consulta_.
+- **Header:**
+```
+Authorization: Bearer <jwt>
+```
 - **Respuesta:**
 ```JSON
 [
     {
         "id": 1,
         "mensaje": "hola mundo",
-        "user": "chalito"
+        "consulta": 1,
+        "emisor": 1
     },
     {
         "id": 2,
         "mensaje": "nose que poner",
-        "user": "seba"
-    },
-    {
-        "id": 3,
-        "mensaje": "uwu",
-        "user": "seba"
-    },
-    {
-        "id": 4,
-        "mensaje": "report",
-        "user": "chalito"
-    },
-    {
-        "id": 5,
-        "mensaje": ">:c",
-        "user": "chalito"
+        "consulta": 1,
+        "emisor": 2
     }
 ]
 ```
-
+### 1. Listar consultas:
+A partir del JWT se listan las consultas asociadas a ese usuario.
+- **Definición:** `GET /v1/consulta/consultas`
+- **Header:**
+```
+Authorization: Bearer <jwt>
+```
+- **Cuerpo:**
+```JSON
+[
+    {
+        "id": 1,
+        "tecnico": 1,
+        "cliente": 2
+    }
+]
+```
 ## Ejecución:
 - Compilar: `mvn install`
 - Ejecutar: `mvn spring-boot:run`
