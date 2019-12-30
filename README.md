@@ -17,8 +17,20 @@
     "jwt": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzZWJhIiwiZXhwIjoxNTc2NzY4MzIwLCJpYXQiOjE1NzY3MzIzMjB9.amR-byoeVUv65J7J6rsRQl9VH9aGVCRvQMdBbzzZhKQ"
 }
 ```
+
+#### 2. Crear usuario:
+- **Definición:** `POST /crear`
+- **Cuerpo:**
+```JSON
+{
+	"username": "seba",
+	"password": "holamundo"
+}
+```
+- **Respuesta:** booleano
+
 ### Mensajes
-### 1. Añadir mensaje:
+#### 1. Añadir mensaje:
 - **Definición:** `POST /v1/mensaje/mensaje`
 - **Header:**
 ```
@@ -32,7 +44,8 @@ Authorization: Bearer <jwt>
 }
 ```
 - **Respuesta:** booleano
-### 2. Listar mensajes:
+
+#### 2. Listar mensajes:
 - **Definición:** `GET /v1/mensaje/{consulta}/{id}`\
 Donde _id_ representa el id del último mensaje leido en la _consulta_.
 - **Header:**
@@ -56,14 +69,16 @@ Authorization: Bearer <jwt>
     }
 ]
 ```
-### 1. Listar consultas:
+
+### Consultas:
+#### 1. Listar consultas:
 A partir del JWT se listan las consultas asociadas a ese usuario.
 - **Definición:** `GET /v1/consulta/consultas`
 - **Header:**
 ```
 Authorization: Bearer <jwt>
 ```
-- **Cuerpo:**
+- **Respuesta:**
 ```JSON
 [
     {
@@ -73,6 +88,22 @@ Authorization: Bearer <jwt>
     }
 ]
 ```
+
+#### 2. Crear consulta:
+- **Definición:** `POST /v1/consulta/consulta`
+- **Header:**
+```
+Authorization: Bearer <jwt>
+```
+- **Cuerpo:**
+```JSON
+{
+    "tecnico": 1,
+    "cliente": 2
+}
+```
+- **Respuesta:** booleano
+
 ## Ejecución:
 - Compilar: `mvn install`
 - Ejecutar: `mvn spring-boot:run`
